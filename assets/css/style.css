@@ -362,7 +362,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  max-width: 49%;
+  max-width: 32%;
 
   margin-right: auto;
   margin-left: auto;
@@ -2233,7 +2233,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Audiowide", sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: rgba(0, 0, 0, 0);
@@ -4100,7 +4100,7 @@ div div div i {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Audiowide", sans-serif;
   color: #fff;
 }
 #footer .footer-top .social-links a {
@@ -4310,7 +4310,7 @@ div div div i {
     background-color: transparent;
     color: white;
     padding: 20px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Audiowide", sans-serif;
     font-size: 16px;
     font-weight: 600;
     border: none;
@@ -4526,7 +4526,7 @@ div div div i {
 .faq .faq-list a {
   display: block;
   position: relative;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Audiowide", sans-serif;
   font-size: 15px;
   line-height: 24px;
   font-weight: 500;
@@ -4710,7 +4710,7 @@ body.activeNav .nav2 {
   text-transform: uppercase;
   color: #ffffff;
   font-weight: 600;
-  font-family: "Montserrat";
+  font-family: "Audiowide";
   transition: all 300ms ease-in-out;
 }
 .nav2 .links2 .link2 a:hover {
