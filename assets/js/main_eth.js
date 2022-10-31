@@ -67,10 +67,8 @@ function connectWallet() {
 }
 
 function controlLoop() {
-    refreshAllData()
-    setLastDepositTimer()
-    setTopDepositTimer()
-    setTimeout(controlLoop, 30000)
+    refreshAllData();
+    setTimeout(controlLoop, 30000);
 }
 
 function numberWithCommas(x) {
