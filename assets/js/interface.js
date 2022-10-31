@@ -1,7 +1,7 @@
 var currentAddr = '';
 var minerAddr = '0x966E4eB004e963c4b890E44F4ADA5D05b5c33709'; //testnet
 //var minerAddr = '0x219Db24F59B7e4F4AeDCD88e43D36c5B791c489B'; //mainnet
-var minersAddr = '0xfdb9Fd3168ea8fc00C69357a0561EBbA14805318'; //testnet
+var minersAddr = '0x1c643545082aD97518Eb452BD2F5153e8FD1CD85'; //testnet
 //var minersAddr = '0x219Db24F59B7e4F4AeDCD88e43D36c5B791c489B'; //mainnet
 var tokenAddr = '0xc46CCBE42Afdf64cc4DA7e56DCd60eE9bF1B743B'; //testnet
 //var tokenAddr = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56'; //mainnet
