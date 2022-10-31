@@ -1,2 +1,1 @@
-# SmartCashCapital-Yieldui
- 
+AutomatedBUSDCapital
