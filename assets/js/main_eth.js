@@ -386,13 +386,12 @@ function calculateEarnings() {
     var dividendsEarned = document.getElementById('dividends-earned');
     var dailyPercentage = document.getElementById('daily-percentage');
     var dailyYield = document.getElementById('daily-yield');
-    var fee = stakedAmount.value * 100 / 1000;
-    
     var dailyRate = 2;
+    var daily = stakedAmount.value * 20 / 1000;
     
     dailyPercentage.textContent = dailyRate;
     
-    dailyYield.textContent = numberWithCommas(Number(dailyRate).toFixed(2))
+    dailyYield.textContent = numberWithCommas(Number(daily).toFixed(2))
 
     var totalEarned = dailyYield.textContent * stakedDays.value;
     dividendsEarned.textContent = numberWithCommas(Number(totalEarned).toFixed(2))
