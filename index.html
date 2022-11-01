@@ -435,7 +435,7 @@
           </div>
           
           <div class='headingwhite' style="font-size:10px;">
-            Reinvesting profits will create a new deposit plan and will not be added to the existing deposit. There is no tax on reinvestments and withdrawing dividends.
+            Reinvesting profits will create a new deposit plan. There is no tax on reinvesting and claiming dividends.
           </div>
         </div>
 
@@ -499,26 +499,34 @@
         
         <div class='card-body'>
           <h3 class='headingyellow mb-2' style="font-size:25px;">WITHDRAW DEPOSITS</h3>
-          <label style="font-size:10px;" for='name' class='source-font-weight-bold-text-lightblue-form-label'>
-            Input the deposit key that you want to withdraw deposit and after 14 days, the requested deposit can be withdrawn together with the accumulated profit from the time of deposit until the requested date. Note: Once requested, the stake will immediately stop accumulating dividends.
-          </label>
+          <div class='headingwhite' style="font-size:10px;">
+            Enter the deposit key that you want to withdraw initial deposit. The requested deposit key can be withdrawn after 14 days.
+          </div>
           <div class='columns w-row'>
-            <div class='mb-3'>
-              <div class='input-group'>
-                <input class='custom-input-text-center-source-form-control w-input buttonGlow' type='number' value="0"
-                  id="deposit-key" step="100" />
-              </div>
-              <div class='custom-input-text-center-source-form-control div-block-32'>
-              <button class='button-primary w-button w-col-6 buttonGlow' onclick="requestWithdrawInitial()" role="button"
-                  type="button">
-                  <a class='headingwhite'>REQUEST</a>
-              </button>
-              <button class='button-primary w-button w-col-6 buttonGlow' onclick="withdrawInitial()" role="button"
-                  type="button">
-                  <a class='headingwhite'>WITHDRAW</a>
-              </button>
-              </div>
+            <div class='source-text-lightblue w-form'>
+              <form id='email-form-2' name='email-form-2' data-name='Email Form 2' method='get'>
+                <div class='mb-3'>
+                  <div class='input-group'>
+                    <input class='custom-input-text-center-source-form-control w-input buttonGlow' type='number' value="0"
+                      id="deposit-key" step="100" />
+                  </div>
+                  <div class='div-block-5'>
+                    <button class="button-primary w-button w-col-6 buttonGlow" onclick="requestWithdrawInitial()" role="button"
+                      type="button">
+                      <a class='headingwhite'>REQUEST</a>
+                    </button>
+                    <button class='button-primary w-button w-col-6 buttonGlow' onclick="withdrawInitial()" role="button"
+                      type="button">
+                      <a class='headingwhite'>WITHDRAW</a>
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
+          </div>
+          <div class='headingwhite' style="font-size:10px; margin-top: 0px;">
+            Amount that can be claimed will be the deposited amount plus the accumulated dividends from time of deposit till the time of withdraw request.
+            Withdrawing initial is subject to 10% Tax. 
           </div>
         </div>
 
