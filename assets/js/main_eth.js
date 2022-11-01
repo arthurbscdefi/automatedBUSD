@@ -232,7 +232,7 @@ function setLastDepositTimer() {
             textStr = "00 H : 00 M : 00 S"
             if(lastDepositElem) lastDepositElem.textContent = textStr;
             clearInterval(x);
-            controlLoop();
+            setLastDepositTimer();
         }
     }, 1000, 1);
 }
@@ -274,7 +274,7 @@ function setTopDepositTimer() {
             textStr2 = "00 H : 00 M : 00 S"
             if(topDepositElem) topDepositElem.textContent = textStr2;
             clearInterval(y);
-            controlLoop();
+            setTopDepositTimer();
         }
     }, 1000, 1);
 }
@@ -305,7 +305,7 @@ function setStartTimer() {
         if (distance < 0) {
             clearInterval(startTimeInterval);
             if(startTimeElem) startTimeElem.remove();
-            controlLoop();
+            setStartTimer();
         }
     }, 1000, 1);
 }
