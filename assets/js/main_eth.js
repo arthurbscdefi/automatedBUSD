@@ -250,27 +250,27 @@ function setTopDepositTimer() {
     });
     var curr = new Date().getTime();
     var diff = (+startTimer2 + +stepTime2) - (+curr/1000);
-    var countDownDate = new Date(+curr + +diff * 1000).getTime();
+    var countDown = new Date(+curr + +diff * 1000).getTime();
 
     clearInterval(y)
     y = setInterval(function () {
-        var currentTime = new Date().getTime();
-        var dist = countDownDate - currentTime;
+        var current = new Date().getTime();
+        var dist2 = countDown - current;
 
-        var days = Math.floor(dist / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) + days * 24);
-        var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((dist % (1000 * 60)) / 1000);
+        var d = Math.floor(dist2 / (1000 * 60 * 60 * 24));
+        var h = Math.floor((dist2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60) + d * 24);
+        var m = Math.floor((dist2 % (1000 * 60 * 60)) / (1000 * 60));
+        var s = Math.floor((dist2 % (1000 * 60)) / 1000);
 
         
-        if (hours < 10) { hours = '0' + hours; }
-        if (minutes < 10) { minutes = '0' + minutes; }
-        if (seconds < 10) { seconds = '0' + seconds; }
+        if (h < 10) { h = '0' + h; }
+        if (m < 10) { m = '0' + m; }
+        if (s < 10) { s = '0' + s; }
 
-        textStr2 = hours + " H : " + minutes + " M : " + seconds + " S";
+        textStr2 = h + " H : " + m + " M : " + s + " S";
         if(topDepositElem) topDepositElem.textContent = textStr2;
 
-        if (dist < 0) {
+        if (dist2 < 0) {
             textStr2 = "00 H : 00 M : 00 S"
             if(topDepositElem) topDepositElem.textContent = textStr2;
             clearInterval(y);
@@ -281,9 +281,8 @@ function setTopDepositTimer() {
 
 var startTimeInterval;
 function setStartTimer() {
-    var startTimeElem = document.getElementById("start-timer")
-    var startTimeElem = document.getElementById("start-container")
-    var endDate = new Date('November 5, 2022 9:00 EST').getTime();
+    var startTimeElem = document.getElementById("start-timer");
+    var endDate = new Date('November 3, 2022 9:00 EST').getTime();
 
     clearInterval(startTimeInterval)
     startTimeInterval = setInterval(function() {
@@ -299,7 +298,7 @@ function setStartTimer() {
         if (hours < 10) { hours = '0' + hours; }
         if (minutes < 10) { minutes = '0' + minutes; }
         if (seconds < 10) { seconds = '0' + seconds; }
-        textStr = " Launch - " + days + " D : " + hours + " H : " + minutes + " M : " + seconds + " S";
+        textStr = " " + days + " D : " + hours + " H : " + minutes + " M : " + seconds + " S";
         if(startTimeElem) startTimeElem.textContent = textStr
 
         // If the count down is finished, write some text
