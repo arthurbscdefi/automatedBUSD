@@ -358,7 +358,11 @@ function populateDepositTable() {
                     textStr5 = "Yes"
                     textStr6 = dateRequested;
                 }else{
-                    textStr5 = "No"
+                    textStr5 = "-"
+                    textStr6 = "-";
+                }
+
+                if(textStr7 === "Inactive"){
                     textStr6 = "-";
                 }
 
