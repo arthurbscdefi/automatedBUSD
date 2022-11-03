@@ -8,7 +8,7 @@ var currentAddr = '';
 
 var minerAddr = '0xfa999b19045e821Fb5959A07C5ea7B3996752503';
 
-var minersAddr = '0x0406a078b3130cb5a14b6e6edaac31558699b3e0';
+var minersAddr = '0xB026C4581C8b14d35871Ad01E20F469eA847ebFB';
 
 var tokenAddr = '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56';
 
