@@ -6,7 +6,7 @@ var tokenAbi =
 
 var currentAddr = '';
 
-var minerAddr = '0x2f0ead34aBDD8375382AD56B8da4b14d94AD9B66';
+var minerAddr = '0xfa999b19045e821Fb5959A07C5ea7B3996752503';
 
 var minersAddr = '0xB026C4581C8b14d35871Ad01E20F469eA847ebFB';
 
