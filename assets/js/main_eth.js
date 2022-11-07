@@ -325,7 +325,7 @@ function populateDepositTable() {
             results.forEach(deposit => {
                 var today = new Date();
                 var dateStartNonLocale = new Date(deposit.depositTime * 1000);
-                //var dateStart = new Date(deposit.depositTime * 1000).toLocaleString();
+                var dateStart = new Date(deposit.depositTime * 1000).toLocaleString();
                 var diffMs = (today - dateStartNonLocale);
                 var diffDays = Math.floor(diffMs / 86400000);
 
@@ -338,7 +338,8 @@ function populateDepositTable() {
                 
                 textStr1 = deposit.depoKey;
                 //textStr2 = dateStart;
-                textStr3 = diffDays + " days";
+                //textStr3 = diffDays + " days";
+                textStr3 = dateStart;
                 textStr4 = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(deposit.amount)).toFixed(2)), 2) + " BUSD";
                 textStr6 = dateRequested;
                 
