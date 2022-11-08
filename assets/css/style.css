@@ -282,7 +282,7 @@
   color: #f0b90b;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 0px;
   margin-top: 10px;
 }
@@ -291,7 +291,7 @@
   color: #ffffff;
   text-shadow: 1px 1px 3px #000000;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 0px;
   margin-top: 5px;
 }
