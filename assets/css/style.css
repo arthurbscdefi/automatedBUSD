@@ -1111,7 +1111,7 @@
   color: #ffffff;
   text-shadow: 1px 1px 3px #f0b90bc;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
+  text-transform: none;
   margin-bottom: 0px;
   margin-top: 10px;
 }
@@ -1604,7 +1604,7 @@
     color: #ffffff;
     text-shadow: 1px 1px 3px #f0b90b;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
+    text-transform: none;
     margin-bottom: 0px;
     margin-top: 10px;
   }
@@ -4194,7 +4194,7 @@ div div div i {
   padding-top: 30px;
   color: #ffffff;
   text-shadow: 1px 1px 3px #000000;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.5px;
 }
 #footer .credits {
