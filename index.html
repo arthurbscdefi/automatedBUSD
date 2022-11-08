@@ -336,90 +336,67 @@
         </div>
         
         <div class='card-body'>
-          <h3 class='headingyellow mb-2' style="font-size:25px;">USER DETAILS</h3>
-          <div class='card-deck'>
-            <div class='card _2'>
-              <h5 class='headingyellow'>
-                Total Active Deposits:
-              </h5>
-              <h5 class='headingyellow'>
-                <strong id="user-total-stakes" class="number">0</strong>
-              </h5>
-            </div>
-          </div>
-          <div class='card-deck'>
-            <div class='card _2'>
-              <h5 class='headingyellow'>
-                Total Deposited Amount:
-              </h5>
-              <h5 class='headingyellow'>
-                <strong id="user-total-deposits" class="number">0.00</strong> BUSD
-              </h5>
-            </div>
-          </div>
-          <div class='card-deck'>
-            <div class='card _2'>
-              <h5 class='headingyellow'>
-                Total Referral Bonus:
-              </h5>
-              <h5 class='headingyellow'>
-                <strong id="user-referral-total-bonus" class="number">0.00</strong> BUSD
-              </h5>
-            </div>
-          </div>
-          <div class='card-deck'>
-            <div class='card _2'>
-              <h5 class='headingyellow'>
-                Total Reinvested:
-              </h5>
-              <h5 class='headingyellow'>
-                <strong id="user-total-compounds" class="number">0.00</strong> BUSD
-              </h5>
-            </div>
-          </div>
-          <div class='card-deck'>
-            <div class='card _2'>
-              <h5 class='headingyellow'>
-                Total Claimed:
-              </h5>
-              <h5 class='headingyellow'>
-                <strong id="user-total-withdrawn" class="number">0.00</strong> BUSD
-              </h5>
-            </div>
-          </div>
-          <div class='card-deck'>
-            <div class='card _2'>
-              <h5 class='headingyellow'>
-                Currend Dividends:
-              </h5>
-              <h5 class='headingyellow'>
-                <strong id="user-available" class="number">0.00</strong> BUSD
-              </h5>
-            </div>
-          </div>
-          <br>
-
-          <div class='source-text-lightblue w-form'>
-            <form id='email-form-2' name='email-form-2' data-name='Email Form 2' method='get'>
-              <div class='mb-3'>
-                <div class='div-block-5'>
-                  <button class='button-primary w-button w-col-6 buttonGlow' onclick="reinvest()" role="button"
-                    type="button" style="margin-right: 10px;">
-                    <a class='headingwhite'>REINVEST</a>
-                  </button>
-                  <button class="button-primary w-button w-col-6 buttonGlow" onclick="withdraw()" role="button"
-                    type="button">
-                    <a class='headingwhite'>CLAIM</a>
-                  </button>
+            <h3 class='headingyellow mb-2' style="font-size:25px;">EARNINGS CALCULATOR</h3>
+              <div class='card-deck'>
+                <div class='card _2'>
+                  <h5 class='headingyellow'>
+                    BUSD Amount:
+                  </h5>
+                  <h5 class='headingyellow'>
+                    <div class='input-group2'>
+                      <input class='custom-input-text-center-source-form-control w-input2 buttonGlow'
+                        onChange="calculateEarnings()" type='number' value="0" id="staked-amount" step="100" />
+                    </div>
+                  </h5>
                 </div>
               </div>
-            </form>
+              <div class='card-deck'>
+                <div class='card _2'>
+                  <h5 class='headingyellow'>
+                    Days Staked:
+                  </h5>
+                  <h5 class='headingyellow'>
+                    <div class='input-group2'>
+                      <input class='custom-input-text-center-source-form-control w-input2 buttonGlow'
+                        onChange="calculateEarnings()" type='number' value="0" id="staked-days" step="100" />
+                    </div>
+                  </h5>
+                </div>
+              </div>
+              <div class='card-deck'>
+                <div class='card _2'>
+                  <h5 class='headingyellow'>
+                    Total Dividends Earned:
+                  </h5>
+                  <h5 class='headingyellow'>
+                    <strong id="dividends-earned" class="number">0.00</strong> BUSD
+                  </h5>
+                </div>
+              </div>
+              <div class='card-deck'>
+                <div class='card _2'>
+                  <h5 class='headingyellow'>
+                    Daily BUSD Dividends:
+                  </h5>
+                  <h5 class='headingyellow'>
+                    <strong id="daily-yield" class="number">0.00</strong> BUSD
+                  </h5>
+                </div>
+              </div>
+              <div class='card-deck'>
+                <div class='card _2'>
+                  <h5 class='headingyellow'>
+                    Daily Dividends Percentage:
+                  </h5>
+                  <h5 class='headingyellow'>
+                    <strong id="daily-percentage">0</strong><strong>%</strong>
+                  </h5>
+                </div>
+              </div>
+              <div class='headingwhite' style="font-size:10px;">
+                The calculator will compute the users earnings depending on the inputed days &amp; busd amount before the taxes.
+              </div>
           </div>
-          
-          <div class='headingwhite' style="font-size:10px;">
-            See FAQs Section for more details.
-          </div>
-        </div>
 
       </div>
       <br>
@@ -477,100 +454,122 @@
           <button class="button-primary w-button buttonGlow" onclick="copyRef()" role="button">
             <a class='headingwhite'>Click here to copy link.</a></button>
         </div>
-        
-        
+
         <div class='card-body'>
-          <h3 class='headingyellow' style="font-size:25px;">WITHDRAW DEPOSITS</h3>
-          <div class='headingwhite' style="font-size:10px; margin-top: 1px;">
-            The requested deposit key can be withdrawn after 14 days from time of request. 
-            See FAQs Section for more details.
-          </div>
-          <div class='columns w-row'>
+            <h3 class='headingyellow mb-2' style="font-size:25px;">USER DETAILS</h3>
+            <div class='card-deck'>
+              <div class='card _2'>
+                <h5 class='headingyellow'>
+                  Total Active Deposits:
+                </h5>
+                <h5 class='headingyellow'>
+                  <strong id="user-total-stakes" class="number">0</strong>
+                </h5>
+              </div>
+            </div>
+            <div class='card-deck'>
+              <div class='card _2'>
+                <h5 class='headingyellow'>
+                  Total Deposited Amount:
+                </h5>
+                <h5 class='headingyellow'>
+                  <strong id="user-total-deposits" class="number">0.00</strong> BUSD
+                </h5>
+              </div>
+            </div>
+            <div class='card-deck'>
+              <div class='card _2'>
+                <h5 class='headingyellow'>
+                  Total Referral Bonus:
+                </h5>
+                <h5 class='headingyellow'>
+                  <strong id="user-referral-total-bonus" class="number">0.00</strong> BUSD
+                </h5>
+              </div>
+            </div>
+            <div class='card-deck'>
+              <div class='card _2'>
+                <h5 class='headingyellow'>
+                  Total Reinvested:
+                </h5>
+                <h5 class='headingyellow'>
+                  <strong id="user-total-compounds" class="number">0.00</strong> BUSD
+                </h5>
+              </div>
+            </div>
+            <div class='card-deck'>
+              <div class='card _2'>
+                <h5 class='headingyellow'>
+                  Total Claimed:
+                </h5>
+                <h5 class='headingyellow'>
+                  <strong id="user-total-withdrawn" class="number">0.00</strong> BUSD
+                </h5>
+              </div>
+            </div>
+            <div class='card-deck'>
+              <div class='card _2'>
+                <h5 class='headingyellow'>
+                  Currend Dividends:
+                </h5>
+                <h5 class='headingyellow'>
+                  <strong id="user-available" class="number">0.00</strong> BUSD
+                </h5>
+              </div>
+            </div>
+            <br>
+  
             <div class='source-text-lightblue w-form'>
               <form id='email-form-2' name='email-form-2' data-name='Email Form 2' method='get'>
                 <div class='mb-3'>
-                  <div class='input-group'>
-                    <input class='custom-input-text-center-source-form-control w-input buttonGlow' type='number' placeholder="Input Deposit Key."
-                      id="deposit-key" step="100" />
-                  </div>
                   <div class='div-block-5'>
-                    <button class="button-primary w-button w-col-6 buttonGlow" onclick="requestWithdrawInitial()" role="button"
-                      type="button"  style="margin-right: 10px;">
-                      <a class='headingwhite'>REQUEST</a>
+                    <button class='button-primary w-button w-col-6 buttonGlow' onclick="reinvest()" role="button"
+                      type="button" style="margin-right: 10px;">
+                      <a class='headingwhite'>REINVEST</a>
                     </button>
-                    <button class='button-primary w-button w-col-6 buttonGlow' onclick="withdrawInitial()" role="button"
+                    <button class="button-primary w-button w-col-6 buttonGlow" onclick="withdraw()" role="button"
                       type="button">
-                      <a class='headingwhite'>WITHDRAW</a>
+                      <a class='headingwhite'>CLAIM</a>
                     </button>
                   </div>
                 </div>
               </form>
             </div>
-          </div>
-        </div>
-
-        <div class='card-body'>
-          <h3 class='headingyellow mb-2' style="font-size:25px;">EARNINGS CALCULATOR</h3>
-            <div class='card-deck'>
-              <div class='card _2'>
-                <h5 class='headingyellow'>
-                  BUSD Amount:
-                </h5>
-                <h5 class='headingyellow'>
-                  <div class='input-group2'>
-                    <input class='custom-input-text-center-source-form-control w-input2 buttonGlow'
-                      onChange="calculateEarnings()" type='number' value="0" id="staked-amount" step="100" />
-                  </div>
-                </h5>
-              </div>
-            </div>
-            <div class='card-deck'>
-              <div class='card _2'>
-                <h5 class='headingyellow'>
-                  Days Staked:
-                </h5>
-                <h5 class='headingyellow'>
-                  <div class='input-group2'>
-                    <input class='custom-input-text-center-source-form-control w-input2 buttonGlow'
-                      onChange="calculateEarnings()" type='number' value="0" id="staked-days" step="100" />
-                  </div>
-                </h5>
-              </div>
-            </div>
-            <div class='card-deck'>
-              <div class='card _2'>
-                <h5 class='headingyellow'>
-                  Total Dividends Earned:
-                </h5>
-                <h5 class='headingyellow'>
-                  <strong id="dividends-earned" class="number">0.00</strong> BUSD
-                </h5>
-              </div>
-            </div>
-            <div class='card-deck'>
-              <div class='card _2'>
-                <h5 class='headingyellow'>
-                  Daily BUSD Dividends:
-                </h5>
-                <h5 class='headingyellow'>
-                  <strong id="daily-yield" class="number">0.00</strong> BUSD
-                </h5>
-              </div>
-            </div>
-            <div class='card-deck'>
-              <div class='card _2'>
-                <h5 class='headingyellow'>
-                  Daily Dividends Percentage:
-                </h5>
-                <h5 class='headingyellow'>
-                  <strong id="daily-percentage">0</strong><strong>%</strong>
-                </h5>
-              </div>
-            </div>
+            
             <div class='headingwhite' style="font-size:10px;">
-              The calculator will compute the users earnings depending on the inputed days &amp; busd amount before the taxes.
+              See FAQs Section for more details.
             </div>
-        </div>
+          </div>
+
+          <div class='card-body'>
+              <h3 class='headingyellow' style="font-size:25px;">WITHDRAW DEPOSITS</h3>
+              <div class='headingwhite' style="font-size:10px; margin-top: 1px;">
+                The requested deposit key can be withdrawn after 14 days from time of request. 
+                See FAQs Section for more details.
+              </div>
+              <div class='columns w-row'>
+                <div class='source-text-lightblue w-form'>
+                  <form id='email-form-2' name='email-form-2' data-name='Email Form 2' method='get'>
+                    <div class='mb-3'>
+                      <div class='input-group'>
+                        <input class='custom-input-text-center-source-form-control w-input buttonGlow' type='number' placeholder="Input Deposit Key."
+                          id="deposit-key" step="100" />
+                      </div>
+                      <div class='div-block-5'>
+                        <button class="button-primary w-button w-col-6 buttonGlow" onclick="requestWithdrawInitial()" role="button"
+                          type="button"  style="margin-right: 10px;">
+                          <a class='headingwhite'>REQUEST</a>
+                        </button>
+                        <button class='button-primary w-button w-col-6 buttonGlow' onclick="withdrawInitial()" role="button"
+                          type="button">
+                          <a class='headingwhite'>WITHDRAW</a>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
 
       </div>
       <br>
