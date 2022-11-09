@@ -113,10 +113,10 @@ function populateUserInfo() {
     var userTotalActiveStakesElem = document.getElementById('user-total-stakes');
 
     userInfo(function (result) {
-        userTotalReferralElem.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalBonus, 'mwei')).toFixed(2)), 2);
-        userTotalDepositElem.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalInvested, 'mwei')).toFixed(2)), 2);
-        userTotalCompoundElem.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalCompounded, 'mwei')).toFixed(2)), 2);
-        userTotalWithdrawElem.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalWithdrawn, 'mwei')).toFixed(2)), 2);
+        userTotalReferralElem.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalBonus)).toFixed(2)), 2);
+        userTotalDepositElem.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalInvested)).toFixed(2)), 2);
+        userTotalCompoundElem.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalCompounded)).toFixed(2)), 2);
+        userTotalWithdrawElem.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalWithdrawn)).toFixed(2)), 2);
         userTotalActiveStakesElem.textContent = Number(result.totalActiveStakes);
     });
 }
@@ -150,10 +150,10 @@ function populateContractInfo() {
 
     getContractInfo(function (result) {
         if(totalStaked) totalStaked.textContent = result.totalUsers; 
-        if(totalReferrals) totalReferrals.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalReferrals, 'mwei')).toFixed(2)), 2);
-        if(totalAmountStaked) totalAmountStaked.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalDeposited, 'mwei')).toFixed(2)), 2);
-        if(totalAmountCompounded) totalAmountCompounded.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalCompounded, 'mwei')).toFixed(2)), 2);
-        if(totalAmountWithdrawn) totalAmountWithdrawn.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalWithdrawn, 'mwei')).toFixed(2)), 2);
+        if(totalReferrals) totalReferrals.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalReferrals)).toFixed(2)), 2);
+        if(totalAmountStaked) totalAmountStaked.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalDeposited)).toFixed(2)), 2);
+        if(totalAmountCompounded) totalAmountCompounded.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalCompounded)).toFixed(2)), 2);
+        if(totalAmountWithdrawn) totalAmountWithdrawn.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.totalWithdrawn)).toFixed(2)), 2);
     });
 }
 
@@ -168,8 +168,8 @@ function populateLastDeposit() {
     getLastDepositInfo(function (result) {
 
         round.textContent = result.currentRound;
-        balance.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.currentBalance, 'mwei')).toFixed(2)), 2);
-        prevBalance.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.previousReward, 'mwei')).toFixed(2)), 2);
+        balance.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.currentBalance)).toFixed(2)), 2);
+        prevBalance.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.previousReward)).toFixed(2)), 2);
         addr.textContent = result.currentPotentialWinner.replace(result.currentPotentialWinner.substring(4, 39), "****");
         prev.textContent = result.previousWinner.replace(result.previousWinner.substring(4, 39), "****");
     });
@@ -187,9 +187,9 @@ function populateTopDeposit() {
     getTopDepositInfo(function (result) {
 
         topround.textContent = result.topDepositRound;
-        topdeposit.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.topDepositCurrentTopDeposit, 'mwei')).toFixed(2)), 2);
-        topbalance.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.topDepositCurrentBalance, 'mwei')).toFixed(2)), 2);
-        topprevBalance.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.topDepositPreviousReward, 'mwei')).toFixed(2)), 2);
+        topdeposit.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.topDepositCurrentTopDeposit)).toFixed(2)), 2);
+        topbalance.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.topDepositCurrentBalance)).toFixed(2)), 2);
+        topprevBalance.textContent = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(result.topDepositPreviousReward)).toFixed(2)), 2);
         topaddr.textContent = result.topDepositCurrentPotentialWinner.replace(result.topDepositCurrentPotentialWinner.substring(4, 39), "****");
         topprev.textContent = result.topDepositPreviousWinner.replace(result.topDepositPreviousWinner.substring(4, 39), "****");
     });
@@ -325,7 +325,7 @@ function populateDepositTable() {
             results.forEach(deposit => {
                 var today = new Date();
                 var dateStartNonLocale = new Date(deposit.depositTime * 1000);
-                //var dateStart = new Date(deposit.depositTime * 1000).toLocaleString();
+                var dateStart = new Date(deposit.depositTime * 1000).toLocaleString();
                 var diffMs = (today - dateStartNonLocale);
                 var diffDays = Math.floor(diffMs / 86400000);
 
@@ -338,8 +338,9 @@ function populateDepositTable() {
                 
                 textStr1 = deposit.depoKey;
                 //textStr2 = dateStart;
-                textStr3 = diffDays + " days";
-                textStr4 = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(deposit.amount, 'mwei')).toFixed(2)), 2) + " USDC";
+                //textStr3 = diffDays + " days";
+                textStr3 = dateStart;
+                textStr4 = stripDecimals(numberWithCommas(Number(web3.utils.fromWei(deposit.amount)).toFixed(2)), 2) + " BUSD";
                 textStr6 = dateRequested;
                 
                 if(deposit.withdrawn === false)
@@ -357,6 +358,7 @@ function populateDepositTable() {
                 if(deposit.requested){
                     textStr5 = "Yes"
                     textStr6 = dateRequested;
+                    textStr7 = "Inactive"
                 }else{
                     textStr5 = "-"
                     textStr6 = "-";
@@ -368,12 +370,12 @@ function populateDepositTable() {
 
                 newRow.innerHTML = `
                 <tr>
-                    <td style="color: #1b08bd"><div style="color: white;">${textStr1}</div></td>
-                    <td style="color: #1b08bd"><div style="color: white;">${textStr3}</div></td>
-                    <td style="color: #1b08bd"><div style="color: white;">${textStr4}</div></td>
-                    <td style="color: #1b08bd"><div style="color: white;">${textStr5}</div></td>
-                    <td style="color: #1b08bd"><div style="color: white;">${textStr6}</div></td>
-                    <td style="color: #1b08bd"><div style="color: green;">${textStr7}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr1}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr3}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr4}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr5}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr6}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: green;">${textStr7}</div></td>
                 </tr>`;
             })
 
