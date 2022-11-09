@@ -369,12 +369,12 @@ function populateDepositTable() {
 
                 newRow.innerHTML = `
                 <tr>
-                    <td style="color: #f0b90b;">${textStr1}</td>
-                    <td style="color: #f0b90b;">${textStr3}</td>
-                    <td style="color: #f0b90b;">${textStr4}</td>
-                    <td style="color: #f0b90b;">${textStr5}</td>
-                    <td style="color: #f0b90b;">${textStr6}</td>
-                    <td style="color: #f0b90b;">${textStr7}</td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr1}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr3}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr4}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr5}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: white;">${textStr6}</div></td>
+                    <td style="color: #f0b90b;"><div style="color: green;">${textStr7}</div></td>
                 </tr>`;
             })
 
