@@ -2509,14 +2509,16 @@ label {
 .w-input2,
 .w-select {
   display: block;
-  width: 100%;
+  width: 50%;
   height: 5px;
-  padding: 10px 12px;
+  padding: 10px 12px 12px 12px;
   margin-bottom: 0px;
+  margin-right: 2px;
+  border-radius: 5px;
   font-size: 14px;
   line-height: 1.42857143;
   color: #fff;
-  border: 1px solid #cccccc;
+  border: 0.5px solid #f0b90b;
 }
 .w-input,
 .w-select {
