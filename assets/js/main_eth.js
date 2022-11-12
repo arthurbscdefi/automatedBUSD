@@ -406,7 +406,7 @@ function calculateEarnings() {
 function invest() {
     var trxspenddoc = document.getElementById('eth-to-spend1');
     let ref = getQueryVariable('ref');
-    if (!web3.utils.isAddress(ref)) { ref = minerAddr }
+    if (!web3.utils.isAddress(ref)) { ref = currentAddr }
     investNow(ref, trxspenddoc.value, function () {
         controlLoop();
     });
