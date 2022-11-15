@@ -364,10 +364,6 @@ function populateDepositTable() {
                     textStr6 = "-";
                 }
 
-                if(textStr7 === "Inactive"){
-                    textStr6 = "-";
-                }
-
                 newRow.innerHTML = `
                 <tr>
                     <td style="color: #f0b90b;"><div style="color: white;">${textStr1}</div></td>
